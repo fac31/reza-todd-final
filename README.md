@@ -10,3 +10,5 @@ how to get started
 `pnpm start`
 
 `pnpm test`
+
+`pnpm run test`
