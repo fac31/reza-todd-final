@@ -8,3 +8,5 @@ how to get started
 `pnpm install`
 
 `pnpm start`
+
+`pnpm test`
