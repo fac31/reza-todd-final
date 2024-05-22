@@ -1,0 +1,25 @@
+{
+  "name": "reza-todd-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "start": "browser-sync start --server --files 'src/**/*' --no-notify --no-open --no-ui --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.12",
+    "browser-sync": "^3.0.2",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
+    "prettier": "^3.2.5"
+  }
+}
