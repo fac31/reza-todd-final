@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
+    "test": "pnpm exec playwright test",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
