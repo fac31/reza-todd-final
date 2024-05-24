@@ -20,28 +20,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () =>
   console.log(`Server running on port http://localhost:${PORT}`)
 );
-
-
-/**
- * const { chromium } = require('playwright');
-
-(async () => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-
-  await page.goto('http://localhost:3000');
-  
-  // Wait for the 'Hello World' message to be displayed
-  await page.waitForSelector('body');
-  const text = await page.$eval('body', (element) => element.textContent);
-
-  // Assert the response
-  if (text.includes('Hello World')) {
-    console.log('Test Passed: "Hello World" message is displayed');
-  } else {
-    console.error('Test Failed: "Hello World" message is not displayed');
-  }
-
-  await browser.close();
-})();
- */
