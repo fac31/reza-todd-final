@@ -12,6 +12,12 @@ export default [
     },
   },
   { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  {
+    languageOptions: {
+      ecmaVersion: 2015,
+      sourceType: "script",
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
   pluginJs.configs.recommended,
 ];
