@@ -1,9 +1,10 @@
 body {
+    background: rgb(0,63,92);
     color: grey
 }
 
 .indexCircle {
-    background: rgba(0,0,0,.3);
+    background: rgb(232,122,44);
     width: 500px;
     height: 500px;
     border-radius: 50%;
@@ -12,7 +13,7 @@ body {
 }
 
 .indexRectangle {
-    background: rgba(0,0,0,.3);
+    background: rgb(138,80,143);
     width: 500px;
     height: 75px;
     border-radius: 20px;
@@ -20,7 +21,7 @@ body {
 }
 
 .indexSquare {
-    background: rgba(0,0,0,.3);
+    background: rgb(255,211,128);
     width: 50px;
     height: 50px;
     border-radius: 10px;
@@ -28,15 +29,10 @@ body {
 }
 
 .indexTriangle {
-    /* background-color: rgba(0,0,0,.3);
-    width: 60px;
-    height: 60px;
-    border: 60px solid transparent;
-    border-bottom-color: red; */
     width: 0;
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 200px solid rgba(0,0,0,.3);
+    border-bottom: 200px solid rgb(232,44,44);
     margin: 0px 75%;
 }
