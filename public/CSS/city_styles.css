@@ -1,0 +1,82 @@
+body {
+    color: rgb(30,30,30);
+    background: rgb(250,247,204);
+}
+
+.cityTriangle {
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 500px solid rgb(255,165,30);
+    margin: -150px;
+}
+
+.cityCircleReturn {
+    background: rgb(255,82,0);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    margin: 0px;
+}
+
+.cityCircle {
+    background: rgb(0,173,56);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    display: grid;
+    margin: 0px;
+}
+
+.cityRectCarousel {
+    background: rgb(35,58,108);
+    width: 650px;
+    height: 450px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.cityRectWide {
+    background: rgb(255,82,0);
+    width: 800px;
+    height: 120px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.cityRectTall {
+    background: rgb(255,165,30);
+    width: 400px;
+    height: 750px;
+    border-radius: 20px;
+    margin: -80% 1100px;
+}
+
+.cityHexagon {
+    height: 200px;
+    width: 120px;
+    background: rgb(0,173,56);
+    position:relative;
+    left:50px;
+    box-sizing: border-box;
+}
+.cityHexagon::before, .cityHexagon::after {
+  content:"";
+  position: absolute;
+  height: 0;
+  width: 0; 
+  top:0;
+  /* half height */
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent; 
+}
+.cityHexagon::before {
+  left:-50px;
+  border-right:50px solid rgb(0,173,56); 
+}
+.cityHexagon::after {
+  right:-50px;
+  border-left:50px solid rgb(0,173,56); 
+}
