@@ -1,3 +1,5 @@
+const colors = require('colors');
+
 const logger = (req, res, next) => {
   const colorMethods = {
     GET: "green",

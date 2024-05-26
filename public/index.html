@@ -8,7 +8,18 @@
   </head>
   <body>
     <h1>Hello World!!!</h1>
+    <form action="/search" id="destination" method="get">
+      <label for="search">Search for a destination:</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="city country or a place of interest"
+        name="search"
+      />
 
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
 
     <script src="./JS/index.js"></script>
   </body>
