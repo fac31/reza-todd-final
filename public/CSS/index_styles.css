@@ -1,15 +1,22 @@
 body {
     color: rgb(30,30,30);
     background: rgb(250,247,204);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #222;
+    height: 100vh; */
 }
 
 .indexCircle {
     background: rgb(255,82,0);
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
     border-radius: 50%;
     display: grid;
-    margin: -100px -80px;
+    margin: -90px -160px;
 }
 
 h1 {
@@ -41,10 +48,10 @@ span {
 
 .indexRectangle {
     background: rgb(35,58,108);
-    width: 500px;
+    width: 650px;
     height: 75px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: -340px auto 80px;
 }
 
 .indexSquare {
@@ -52,14 +59,24 @@ span {
     width: 50px;
     height: 50px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: -20px auto;
 }
 
-.indexTriangle {
+/* .indexTriangle {
     width: 0;
     height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 200px solid rgb(0,173,56);
-    margin: 0px 75%;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 500px solid rgb(0,173,56);
+    margin: -200px 69%;
+    position: relative;
+} */
+
+.indexTriangle {
+    width: 500px;  /* Adjust to your needs */
+    height: 500px; /* Adjust to your needs */
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M 50 10 Q 55 0, 60 10 L 90 80 Q 95 90, 85 90 L 15 90 Q 5 90, 10 80 Z" fill="rgb(0,173,56)" /></svg>') no-repeat center center;
+    background-size: contain;
+    margin: -200px 69%;
+    position: relative;
 }
