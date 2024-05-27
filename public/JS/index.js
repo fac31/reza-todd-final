@@ -1,98 +1,145 @@
-document.getElementById("destination").addEventListener("submit", async (e) => {
+document
+  .getElementById("destination")
+  .addEventListener("submit", handleFormSubmit);
+
+async function handleFormSubmit(e) {
   e.preventDefault();
   const searchterm = document.getElementById("search").value;
   console.log(searchterm);
 
   try {
-    const response = await fetch(`/search?destination=${searchterm}`);
-    const data = await response.json();
+    const data = await fetchData(searchterm);
     const { geoData, weatherData } = data;
-    console.log(data);
+    let locationData, forecasts;
 
     if (geoData) {
-      const { features } = geoData;
-      const {
-        city,
-        country,
-        country_code: countryCode,
-        formatted,
-        lon,
-        lat,
-        place_id: placeId,
-      } = features[0].properties;
-
-      // ...
-
+      locationData = processGeoData(geoData);
+      console.log(locationData);
     } else {
       console.error("Missing location data in response");
     }
 
     if (weatherData) {
-      const { list, city } = weatherData;
-
-      const cityName = city.name;
-      const timezone = city.timezone;
-      const sunrise = city.sunrise;
-      const sunset = city.sunset;
-
-      // Forecast details
-      const forecasts = [];
-      for (const item of list) {
-        const {
-          dt,
-          main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
-          weather: [{ main: weatherDescription, icon }],
-          clouds: { all },
-          pop,
-          rain,
-          wind: { speed, deg },
-        } = item;
-
-        forecasts.push({
-          dateTime: dt,
-          temperature: temp,
-          feelsLike: feels_like,
-          tempMin: temp_min,
-          tempMax: temp_max,
-          pressure,
-          humidity,
-          weather: weatherDescription,
-          weatherIcon: icon,
-          cloudCover: all,
-          chanceOfRain: pop,
-          rainAmount: rain,
-          windSpeed: speed,
-          windDirection: deg,
-        });
-      }
-
-      // Update results tag using processed data
-      let forecastHTML = "";
-      for (const forecast of forecasts) {
-        forecastHTML += `
-          <div class="forecast">
-            <h3>${new Date(forecast.dateTime * 1000).toLocaleDateString()}</h3>
-            <p>Weather: ${forecast.weather}</p>
-            <p>High: ${forecast.tempMax}° Low: ${forecast.tempMin}°</p>
-            <p>Feels Like: ${forecast.feelsLike}°</p>
-            <p>Humidity: ${forecast.humidity}%</p>
-          </div>
-        `;
-      }
-
-      document.getElementById('result').innerHTML = `
-        <h2>City: ${cityName}</h2>
-        <h2>City Name: ${cityName}</h2>
-        <h2>Timezone: ${timezone}</h2>
-        <h2>Sunrise: ${sunrise}</h2>
-        <h2>Sunset: ${sunset}</h2>
-        <h2>Forecasts:</h2>
-        <div class="forecast-container">${forecastHTML}</div>
-      `;
+      forecasts = processWeatherData(weatherData);
     } else {
       console.error("Missing weather data in response");
+    }
+
+    if (locationData && forecasts) {
+      renderResults(locationData, forecasts);
     }
   } catch (error) {
     console.log(error.message);
   }
-});
+}
+
+async function fetchData(searchterm) {
+  const response = await fetch(`/search?destination=${searchterm}`);
+  const data = await response.json();
+  return data;
+}
+
+function processGeoData(geoData) {
+  const { features } = geoData;
+  const {
+    city,
+    country,
+    country_code: countryCode,
+    formatted,
+    lon,
+    lat,
+    place_id: placeId,
+  } = features[0].properties;
+
+  return {
+    city,
+    country,
+    countryCode,
+    formatted,
+    lon,
+    lat,
+    placeId,
+  };
+}
+
+function processWeatherData(weatherData) {
+  const { list, city } = weatherData;
+  const cityName = city.name;
+  const timezone = city.timezone;
+  const sunrise = city.sunrise;
+  const sunset = city.sunset;
+
+  const forecasts = list.map((item) => {
+    const {
+      dt,
+      main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+      weather: [{ main: weatherDescription, icon }],
+      clouds: { all },
+      pop,
+      rain,
+      wind: { speed, deg },
+    } = item;
+
+    return {
+      dateTime: dt,
+      temperature: temp,
+      feelsLike: feels_like,
+      tempMin: temp_min,
+      tempMax: temp_max,
+      pressure,
+      humidity,
+      weather: weatherDescription,
+      weatherIcon: icon,
+      cloudCover: all,
+      chanceOfRain: pop,
+      rainAmount: rain,
+      windSpeed: speed,
+      windDirection: deg,
+    };
+  });
+
+  return { cityName, timezone, sunrise, sunset, forecasts };
+}
+
+function renderResults(locationData, weatherData) {
+  const { city, country, countryCode, formatted, lon, lat, placeId } =
+    locationData;
+  const { cityName, timezone, sunrise, sunset, forecasts } = weatherData;
+
+  let forecastHTML = "";
+  forecasts.forEach((forecast) => {
+    forecastHTML += `
+      <div class="forecast">
+        <h3>${new Date(forecast.dateTime * 1000).toLocaleDateString()}</h3>
+        <img src="http://openweathermap.org/img/wn/${forecast.weatherIcon}.png" alt="${forecast.weather}">
+        <p>Weather: ${forecast.weather}</p>
+        <p>High: ${forecast.tempMax}° Low: ${forecast.tempMin}°</p>
+        <p>Feels Like: ${forecast.feelsLike}°</p>
+        <p>Humidity: ${forecast.humidity}%</p>
+        <p>Pressure: ${forecast.pressure} hPa</p>
+        <p>Cloud Cover: ${forecast.cloudCover}%</p>
+        <p>Chance of Rain: ${forecast.chanceOfRain}%</p>
+        <p>Rain Amount: ${forecast.rainAmount ? forecast.rainAmount : 0} mm</p>
+        <p>Wind Speed: ${forecast.windSpeed} m/s</p>
+        <p>Wind Direction: ${forecast.windDirection}°</p>
+
+      </div>
+    `;
+  });
+
+  document.getElementById("result").innerHTML = `
+    <h2>City: ${cityName}</h2>
+    <h2>Country: ${country}</h2>
+    <h2>Country Code: ${countryCode}</h2>
+    <h2>Formatted: ${formatted}</h2>
+    <h2>Longitude: ${lon}</h2>
+    <h2>Latitude: ${lat}</h2>
+    <h2>Place ID: ${placeId}</h2>
+    <h2>City Name: ${cityName}</h2>
+    <h2>Timezone: ${timezone}</h2>
+    <h2>Sunrise: ${sunrise}</h2>
+    <h2>Sunset: ${sunset}</h2>
+    <h2>Forecasts:</h2>
+    <div class="forecast-container">${forecastHTML}</div>
+  `;
+}
