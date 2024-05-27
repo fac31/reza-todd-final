@@ -35,35 +35,66 @@ h1 {
     }
 }
 
-.indexRectangle {
-    background: rgb(35,58,108);
+
+
+/* input object */
+.inputContainer {
+    position: relative;
     width: 650px;
     height: 75px;
-    border-radius: 20px;
     margin: -340px auto 80px;
 }
 
-.indexSquare {
+.indexRectangle {
     background: rgb(255,165,30);
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 28px;
+    border: none;
+    color: rgb(30,30,30);
+    outline: none;
+}
+
+
+
+/* submit object */
+.indexSquare {
+    background: rgb(0,173,56);
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
     margin: -20px auto;
     position: relative;
 }
 
 .indexSubmit {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    /* margin: -20px auto; */
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
     background: transparent;
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 25px
+    font-size: 37px
 }
 
+
+
+/* Triangle object */
 .indexTriangle {
     width: 0;
     height: 0;
@@ -73,7 +104,9 @@ h1 {
     margin: -300px 57%;
 }
 
-/* Styling for the Help button */
+
+
+/* Styling for Help button */
 .indexHelpPopup {
     display: none; /* Hide popup initially */
     position: fixed;
@@ -119,10 +152,18 @@ span {
 }
 
 .indexCircle {
-    background: rgb(255,165,30);
-    width: 350px;
-    height: 350px;
+    background: rgb(35,58,108);
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     display: grid;
     margin: -1080px 70%;
+}
+
+.cityRectTall {
+    background: rgb(255,165,30);
+    width: 400px;
+    height: 750px;
+    border-radius: 20px;
+    margin: -80% 1100px;
 }
