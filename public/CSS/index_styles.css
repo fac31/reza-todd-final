@@ -132,6 +132,26 @@ h1 {
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
 }
 
+.help {
+    position: absolute; /* Position the button relative to its container */
+    top: 50%; /* Position it vertically in the middle */
+    left: 50%; /* Position it horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center it precisely */
+}
+
+#indexShowHelp {
+    background-color: transparent; /* Background color */
+    border: 0px;
+    border-radius: 10px; /* Border radius */
+    width: 500px;
+    height: 220px;
+    padding: 10px 20px; /* Padding */
+    font-size: 42px; /* Font size */
+    font-family:Arial, Helvetica, sans-serif;
+    cursor: pointer; /* Cursor style */
+    transform: rotate(90deg);
+}
+
 /* Styling for Help button */
 .indexHelpPopup {
     display: none;
@@ -167,6 +187,7 @@ h1 {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    left: 28%;
 }
 .indexPopupClose:hover,
 .indexPopupClose:focus {
