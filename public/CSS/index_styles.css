@@ -38,37 +38,50 @@ h1 {
 
 
 /* input object */
-.inputContainer {
-    position: relative;
-    width: 650px;
-    height: 75px;
-    margin: -340px auto 80px;
-}
-
 .indexRectangle {
     background: rgb(255,165,30);
-    width: 100%;
-    height: 100%;
+    width: 650px;
+    height: 75px;
     border-radius: 20px;
+    margin: -340px auto 80px;
+    position: relative;
+}
+
+.indexForm {
+    width: 200px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
     position: absolute;
-    top: 0;
-    left: 0;
+    font-size: 28px;
+    color: rgb(30,30,30);
+    outline: none;
+    border: 0px;
+    bottom: -20px;
+    left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .input {
-    width: 100%;
-    height: 100%;
+    width: 450px;
+    height: 75px;
     border-radius: 20px;
     background: transparent;
     position: absolute;
     top: 0;
     left: 0;
     font-size: 28px;
-    border: none;
     color: rgb(30,30,30);
     outline: none;
+    border: 0px;
+    left: 130px;
+    top: -23px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.input::placeholder {
+    color: rgba(0,0,0,.4)
+}
 
 
 /* submit object */
@@ -89,7 +102,9 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 37px
+    font-size: 37px;
+    outline: none;
+    border: 0px;
 }
 
 
@@ -160,10 +175,10 @@ span {
     margin: -1080px 70%;
 }
 
-.cityRectTall {
+/* .cityRectTall {
     background: rgb(255,165,30);
     width: 400px;
     height: 750px;
     border-radius: 20px;
     margin: -80% 1100px;
-}
+} */
