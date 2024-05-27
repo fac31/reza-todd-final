@@ -1,12 +1,21 @@
-const str = "Welcome to RADAR";
-const text = document.getElementById("welcomeText");
-window.onload = function(){
-    for(let i=0; i<str.length; i++) {
+
+// ********* Javascript for dynamic welcome sign *************
+const str = "Welcome to RADAR. Welcome to RADAR. Welcome to RADAR.";
+const circle = document.querySelector('.indexWelcomeCircle');
+
+window.onload = function() {
+    for (let i = 0; i < str.length; i++) {
         let span = document.createElement('span');
         span.innerHTML = str[i];
-        text.appendChild(span);
-        console.log(str[i])
-        span.style.transform = 'rotate(${11 * i}deg)';
+        
+        // Adjust the distance from the center to move the text inward
+        let distanceFromCenter = 250; // Change this value as needed
+
+        // Calculate the position for each character
+        let angle = i * (360 / str.length);
+        span.style.transform = `rotate(${angle}deg) translate(0, -${distanceFromCenter}px) rotate(-${angle}deg)`;
+        
+        circle.appendChild(span);
     }
 }
 
