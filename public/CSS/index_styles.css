@@ -120,21 +120,21 @@ h1 {
 
 
 
-/* Triangle object */
-.indexTriangle {
-    width: 0;
-    height: 0;
-    border-left: 450px solid transparent;
-    border-right: 450px solid transparent;
-    border-bottom: 900px solid rgb(0,173,56);
-    margin: -300px 57%;
+/* Rectangle Help object */
+.indexRectangleFive {
+    background: rgb(255,82,0);
+    width: 220px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 190px 520px;
+    right: -34%;
+    position: absolute;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
 }
-
-
 
 /* Styling for Help button */
 .indexHelpPopup {
-    display: none; /* Hide popup initially */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -151,8 +151,17 @@ h1 {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
+    max-width: 650px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
 }
+
+.indexPopupContent p:first-of-type,
+.indexPopupContent p:last-of-type {
+    font-weight: bold;
+}
+
 .indexPopupClose {
     color: #aaa;
     float: right;
@@ -244,4 +253,13 @@ span {
     margin: -120px 40%;
     position: absolute;
     box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.2);
+}
+
+.indexTriangle {
+    width: 0;
+    height: 0;
+    border-left: 200px solid transparent;
+    border-right: 3500px solid transparent;
+    border-bottom: 1000px solid rgb(0,173,56);
+    margin: -500px 77%;
 }
