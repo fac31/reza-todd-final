@@ -33,18 +33,15 @@ app.get("/:searchTerm", logger, async (req, res) => {
   try {
     // Fetch data from Geoapify
     const geoData = await fetchGeoapifyData(searchTerm);
-    // const photos = await fetchUnsplashPhotos(`${searchTerm}`);
 
     // Extract latitude and longitude from the Geoapify response
     if (geoData.features && geoData.features.length > 0) {
       const { lat, lon } = geoData.features[0].properties;
 
-      // Fetch weather data using latitude and longitude
       const weatherData = await fetchWeatherData(lat, lon);
 
-      // Fetch photos from Unsplash
       const searchImgs = await fetchUnsplashPhotos(searchTerm);
-      console.log(searchImgs);
+      // console.log(searchImgs);
 
       // Send combined response
       res.json({

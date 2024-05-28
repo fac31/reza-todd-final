@@ -27,7 +27,7 @@ async function handleFormSubmit(e) {
     if (searchImgs) {
       photos = processPhotos(searchImgs);
       // console.log(photos);
-    }else{
+    } else {
       console.error("Missing photos data in response");
     }
 
@@ -113,23 +113,12 @@ function processPhotos(searchImgs) {
     user: img.user.name,
     userName: img.user.username,
   }));
-// console.log(searchImgs);
-  // const { results } = searchImgs;
-  // const { urls, user } = results[0];
-  // return {
-  //   url: urls.regular,
-  //   user: user.name,
-  //   userName: user.username,
-  // };
-
 }
 
 function renderResults(locationData, weatherData, photos) {
   const { city, country, countryCode, formatted, lon, lat, placeId } =
     locationData;
   const { cityName, timezone, sunrise, sunset, forecasts } = weatherData;
-
-
 
   let forecastHTML = "";
   forecasts.forEach((forecast) => {
@@ -156,8 +145,14 @@ function renderResults(locationData, weatherData, photos) {
   photos.forEach((photo) => {
     photoHTML += `
       <div class="photo">
-        <img src="${photo.url}" alt="${photo.user}">
-        <p>Photo by ${photo.userName}</p>
+      <img class="img" src=${photo.url} />
+      <a
+        class="credit"
+        target="_blank"
+        href={https://unsplash.com/@${photo.userName}}
+      >
+        <span>${photo.user}</span>
+      </a>
       </div>
     `;
   });

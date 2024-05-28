@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { createApi } = require("unsplash-js");
+// const { createApi } = require("unsplash-js");
 require("dotenv").config();
 
 const GEOAPIFY_API_KEY = process.env.GEOAPIFY_API_KEY;
@@ -60,26 +60,6 @@ const fetchUnsplashPhotos = async (searchTerm) => {
     console.error("Error fetching Unsplash photos:", error);
   }
 };
-
-//   const url = "https://api.unsplash.com/search/photos";
-//   const params = {
-//     query: searchTerm,
-//     orientation: "landscape",
-//     client_id: UNSPLASH_ACC_KEY,
-//   };
-
-//   try {
-//     const response = await axios.get(url, { params });
-//     if (!response.ok) {
-//       throw new Error(error.message);
-//     }
-//     return response.data.results;
-//   } catch (error) {
-//     throw new Error(`Unsplash API error: ${error.message}`);
-//   }
-// };
-
-// Export the functions to be used in other modules
 module.exports = {
   fetchGeoapifyData,
   fetchWeatherData,
