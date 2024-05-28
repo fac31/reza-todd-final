@@ -5,12 +5,11 @@ document
 async function handleFormSubmit(e) {
   e.preventDefault();
   const searchterm = document.getElementById("search").value;
-  console.log(searchterm);
-
+  // console.log(searchterm);
   try {
     const data = await fetchData(searchterm);
-    const { geoData, weatherData } = data;
-    let locationData, forecasts;
+    const { geoData, weatherData, searchImgs } = data;
+    let locationData, forecasts, photos;
 
     if (geoData) {
       locationData = processGeoData(geoData);
@@ -21,12 +20,19 @@ async function handleFormSubmit(e) {
 
     if (weatherData) {
       forecasts = processWeatherData(weatherData);
+      console.log(forecasts);
     } else {
       console.error("Missing weather data in response");
     }
+    if (searchImgs) {
+      photos = processPhotos(searchImgs);
+      // console.log(photos);
+    }else{
+      console.error("Missing photos data in response");
+    }
 
-    if (locationData && forecasts) {
-      renderResults(locationData, forecasts);
+    if (locationData && forecasts && photos) {
+      renderResults(locationData, forecasts, photos);
     }
   } catch (error) {
     console.log(error.message);
@@ -101,10 +107,29 @@ function processWeatherData(weatherData) {
   return { cityName, timezone, sunrise, sunset, forecasts };
 }
 
-function renderResults(locationData, weatherData) {
+function processPhotos(searchImgs) {
+  return searchImgs.results.map((img) => ({
+    url: img.urls.regular,
+    user: img.user.name,
+    userName: img.user.username,
+  }));
+// console.log(searchImgs);
+  // const { results } = searchImgs;
+  // const { urls, user } = results[0];
+  // return {
+  //   url: urls.regular,
+  //   user: user.name,
+  //   userName: user.username,
+  // };
+
+}
+
+function renderResults(locationData, weatherData, photos) {
   const { city, country, countryCode, formatted, lon, lat, placeId } =
     locationData;
   const { cityName, timezone, sunrise, sunset, forecasts } = weatherData;
+
+
 
   let forecastHTML = "";
   forecasts.forEach((forecast) => {
@@ -127,6 +152,16 @@ function renderResults(locationData, weatherData) {
     `;
   });
 
+  let photoHTML = "";
+  photos.forEach((photo) => {
+    photoHTML += `
+      <div class="photo">
+        <img src="${photo.url}" alt="${photo.user}">
+        <p>Photo by ${photo.userName}</p>
+      </div>
+    `;
+  });
+
   document.getElementById("result").innerHTML = `
     <h2>City: ${cityName}</h2>
     <h2>Country: ${country}</h2>
@@ -141,5 +176,6 @@ function renderResults(locationData, weatherData) {
     <h2>Sunset: ${sunset}</h2>
     <h2>Forecasts:</h2>
     <div class="forecast-container">${forecastHTML}</div>
+    div class="photo-container">${photoHTML}</div>
   `;
 }

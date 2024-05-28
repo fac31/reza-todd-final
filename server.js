@@ -25,8 +25,6 @@ app.get("/", logger, async (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
   // res.status(200).send("Hello World");
 });
-// get teh searched item from the user and fetch data from the api
-
 app.get("/:searchTerm", logger, async (req, res) => {
   console.log("=============Search Term=================");
   const searchTerm = req.query.destination;
@@ -45,13 +43,14 @@ app.get("/:searchTerm", logger, async (req, res) => {
       const weatherData = await fetchWeatherData(lat, lon);
 
       // Fetch photos from Unsplash
-      // const photos = await fetchUnsplashPhotos(searchTerm);
+      const searchImgs = await fetchUnsplashPhotos(searchTerm);
+      console.log(searchImgs);
 
       // Send combined response
       res.json({
         geoData: geoData,
         weatherData: weatherData,
-        // photos: photos,
+        searchImgs: searchImgs,
       });
     } else {
       res.status(404).json({ error: "Location not found" });
