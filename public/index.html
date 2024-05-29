@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/CSS/index_styles.css" />
+    <link rel="stylesheet" href="./CSS/index_styles.css" />
     <title>api project</title>
   </head>
   <body>
@@ -23,7 +23,10 @@
     <section class = "indexRectangle">
       <form class="indexForm" id='indexForm'>
         RADAR:
-        <input type="text" id="input" class="input" placeholder="Type here..." />
+        <input required type="text" id="input" class="input" placeholder="Type here..." />
+        <section class = "indexSquare">
+          <button id = "indexSubmit" class = "indexSubmit">&#8626;</button>
+      </section>
       </form>
     </section>
 
@@ -36,11 +39,7 @@
     <section class="indexRectangleTwo">
     </section>
 
-    <section class = "indexSquare">
-      <a href = "city.html">
-        <button id = "indexSubmit" class = "indexSubmit">&#8626;</button>
-      </a>
-    </section>
+
 
     <section class = "indexTriangle">
     </section>
@@ -66,6 +65,6 @@
       </div>
     </div>
 
-    <script src="/public/JS/index.js"></script>
+    <script src="./JS/index.js"></script>
   </body>
 </html>

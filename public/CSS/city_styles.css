@@ -7,9 +7,23 @@ body {
     width: 0;
     height: 0;
     border-left: 250px solid transparent;
-    border-right: 250px solid transparent;
+    border-right: 1050px solid transparent;
     border-bottom: 500px solid rgb(255,165,30);
-    margin: -150px;
+    margin: 350px -600px;
+}
+
+.cityRectWide {
+    background: rgb(255,82,0);
+    width: 800px;
+    height: 120px;
+    border-radius: 20px;
+    margin: -80% 70%;
+}
+
+h1 {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .cityCircleReturn {
@@ -18,7 +32,7 @@ body {
     height: 80px;
     border-radius: 50%;
     display: grid;
-    margin: 0px;
+    margin: 0 auto;
 }
 
 .cityCircle {
@@ -61,14 +75,6 @@ span {
     background: rgb(35,58,108);
     width: 650px;
     height: 450px;
-    border-radius: 20px;
-    margin: 0;
-}
-
-.cityRectWide {
-    background: rgb(255,82,0);
-    width: 800px;
-    height: 120px;
     border-radius: 20px;
     margin: 0;
 }

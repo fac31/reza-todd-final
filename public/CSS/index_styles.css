@@ -123,7 +123,8 @@ h4 {
     width: 70px;
     height: 70px;
     border-radius: 12px;
-    margin: -20px auto;
+    margin: 60% 270px;
+    align-items: center;
     position: relative;
     box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
 }
@@ -149,7 +150,7 @@ h4 {
     width: 220px;
     height: 500px;
     border-radius: 20px;
-    margin: 190px 520px;
+    margin: 20% 700px;
     right: -34%;
     position: absolute;
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
