@@ -1,0 +1,115 @@
+body {
+    color: rgb(30,30,30);
+    background: rgb(250,247,204);
+}
+
+.cityTriangle {
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 1050px solid transparent;
+    border-bottom: 500px solid rgb(255,165,30);
+    margin: 350px -600px;
+}
+
+.cityRectWide {
+    background: rgb(255,82,0);
+    width: 800px;
+    height: 120px;
+    border-radius: 20px;
+    margin: -80% 70%;
+}
+
+h1 {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.cityCircleReturn {
+    background: rgb(255,82,0);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    margin: 0 auto;
+}
+
+.cityCircle {
+    background: rgb(0,173,56);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    display: grid;
+    margin: 0px;
+}
+
+p {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    animation: effect 8s linear infinite;
+}
+
+@keyframes effect {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+span {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0px 150px;
+    transform-style: flat;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+}/*# sourceMappingURL=index.css.map */
+
+.cityRectCarousel {
+    background: rgb(35,58,108);
+    width: 650px;
+    height: 450px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.cityRectTall {
+    background: rgb(255,165,30);
+    width: 400px;
+    height: 750px;
+    border-radius: 20px;
+    margin: -80% 1100px;
+}
+
+.cityHexagon {
+    height: 200px;
+    width: 120px;
+    background: rgb(0,173,56);
+    position:relative;
+    left:50px;
+    box-sizing: border-box;
+}
+.cityHexagon::before, .cityHexagon::after {
+  content:"";
+  position: absolute;
+  height: 0;
+  width: 0; 
+  top:0;
+  /* half height */
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent; 
+}
+.cityHexagon::before {
+  left:-50px;
+  border-right:50px solid rgb(0,173,56); 
+}
+.cityHexagon::after {
+  right:-50px;
+  border-left:50px solid rgb(0,173,56); 
+}
