@@ -38,22 +38,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* h1 {
-    width: 200px;
-    height: 75px;
-    border-radius: 20px;
-    background: transparent;
-    position: absolute;
-    font-size: 28px;
-    color: rgb(30, 30, 30);
-    outline: none;
-    border: 0px;
-    bottom: -20px;
-    left: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-
-} */
-
 .cityCircleReturn {
     background: rgb(255,82,0);
     width: 80px;
@@ -108,36 +92,50 @@ span {
 }
 
 .cityRectTall {
-    background: rgb(255,165,30);
-    width: 400px;
-    height: 750px;
+    background: rgb(255, 165, 30);
+    width: 350px;
+    height: 500px;
     border-radius: 20px;
-    margin: -80% 1100px;
+    margin: 120px 1050px;
+    position: relative;
 }
 
-.cityHexagon {
-    height: 200px;
-    width: 120px;
-    background: rgb(0,173,56);
-    position:relative;
-    left:50px;
-    box-sizing: border-box;
+.cityAbout {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 0 auto;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.cityHexagon::before, .cityHexagon::after {
-  content:"";
-  position: absolute;
-  height: 0;
-  width: 0; 
-  top:0;
-  /* half height */
-  border-top: 100px solid transparent;
-  border-bottom: 100px solid transparent; 
+
+.cityTimeCircle {
+    background: rgb(35, 58, 108);
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    margin: -1130px 55%;
 }
-.cityHexagon::before {
-  left:-50px;
-  border-right:50px solid rgb(0,173,56); 
-}
-.cityHexagon::after {
-  right:-50px;
-  border-left:50px solid rgb(0,173,56); 
-}
+
+/* .cityTime {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 0 auto;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+} */
