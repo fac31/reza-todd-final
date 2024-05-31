@@ -1,15 +1,14 @@
+/* html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */
+
 body {
     color: rgb(30,30,30);
     background: rgb(250,247,204);
-}
-
-.cityTriangle {
-    width: 0;
-    height: 0;
-    border-left: 250px solid transparent;
-    border-right: 1050px solid transparent;
-    border-bottom: 500px solid rgb(255,165,30);
-    margin: 350px -600px;
 }
 
 .cityRectWide {
@@ -38,13 +37,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/*   */
 .cityCircleReturn {
     background: rgb(255,82,0);
     width: 80px;
     height: 80px;
     border-radius: 50%;
     display: grid;
-    margin: 0 auto;
+    margin: -79% 8%;
+    position: relative;
+}
+
+.cityReturn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 60px;
+    position: absolute;
+    left: 0;
+    top: -4px;
+    outline: none;
+    border: 0px;
 }
 
 .cityCircle {
@@ -53,14 +68,14 @@ body {
     height: 700px;
     border-radius: 50%;
     display: grid;
-    margin: 920px auto;
+    margin: 990px 30%;
 }
 
 p {
     height: 300px;
     width: 300px;
     position: relative;
-    animation: effect 8s linear infinite;
+    animation: effect 12s linear infinite;
 }
 
 @keyframes effect {
@@ -85,10 +100,10 @@ span {
 
 .cityRectCarousel {
     background: rgb(35,58,108);
-    width: 650px;
-    height: 450px;
+    width: 530px;
+    height: 370px;
     border-radius: 20px;
-    margin: 0;
+    margin: 1250px 80px;
 }
 
 .cityRectTall {
@@ -96,8 +111,24 @@ span {
     width: 350px;
     height: 500px;
     border-radius: 20px;
-    margin: 120px 1050px;
+    margin: 500px 1050px;
     position: relative;
+}
+
+.cityCurrency {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 0 auto;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cityAbout {
@@ -121,10 +152,11 @@ span {
     width: 290px;
     height: 290px;
     border-radius: 50%;
-    margin: -1130px 55%;
+    margin: -1130px 53%;
+    position: relative;
 }
 
-/* .cityTime {
+.cityTime {
     width: 450px;
     height: 75px;
     border-radius: 20px;
@@ -138,4 +170,16 @@ span {
     left: 20px;
     top: 100px;
     font-family: Arial, Helvetica, sans-serif;
-} */
+}
+
+
+
+/* Background image */
+.cityTriangle {
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 1050px solid transparent;
+    border-bottom: 500px solid rgb(255,165,30);
+    margin: 350px -600px;
+}
