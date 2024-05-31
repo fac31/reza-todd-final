@@ -11,6 +11,8 @@ body {
     background: rgb(250,247,204);
 }
 
+
+/* Rotating circle */
 .indexWelcomeCircle {
     background: rgb(255, 82, 0);
     width: 650px;
@@ -49,11 +51,9 @@ h1 {
     animation: rotate 10s linear infinite; /* Rotate the entire circle continuously */
 }
 
-h4 {
-    font-family: Arial, Helvetica, sans-serif;
 
-}
 
+/* R.T. productions circle */
 .indexCircleTwo {
     background: rgb(255,165,30);
     width: 180px;
@@ -68,6 +68,13 @@ h4 {
     place-items: center;
     transform: translate(-50%, -50%);
 }
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
 
 /* input object */
 .indexRectangle {
@@ -175,6 +182,8 @@ h4 {
     cursor: pointer; /* Cursor style */
     transform: rotate(90deg);
 }
+
+
 
 /* Styling for Help button */
 .indexHelpPopup {

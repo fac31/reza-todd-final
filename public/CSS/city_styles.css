@@ -1,16 +1,19 @@
-/* html, body {
+html, body {
     overflow: hidden;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-} */
+}
 
 body {
     color: rgb(30,30,30);
     background: rgb(250,247,204);
 }
 
+
+
+/* city name object */
 .cityRectWide {
     background: rgb(255, 82, 0);
     width: 600px;
@@ -38,7 +41,8 @@ body {
 }
 
 
-/*   */
+
+/* Return object  */
 .cityCircleReturn {
     background: rgb(255,82,0);
     width: 80px;
@@ -62,6 +66,9 @@ body {
     border: 0px;
 }
 
+
+
+/* Weather object */
 .cityCircle {
     background: rgb(0, 173, 56);
     width: 700px;
@@ -92,12 +99,15 @@ span {
     left: 50%;
     transform-origin: 0px 150px;
     transform-style: flat;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: 900;
     color: #fff;
-}/*# sourceMappingURL=index.css.map */
+}
 
+
+
+/* Image carousel object */
 .cityRectCarousel {
     background: rgb(35,58,108);
     width: 530px;
@@ -106,6 +116,9 @@ span {
     margin: 1250px 80px;
 }
 
+
+
+/* Currency and About object */
 .cityRectTall {
     background: rgb(255, 165, 30);
     width: 350px;
@@ -147,6 +160,9 @@ span {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+/* Time object */
 .cityTimeCircle {
     background: rgb(35, 58, 108);
     width: 290px;
