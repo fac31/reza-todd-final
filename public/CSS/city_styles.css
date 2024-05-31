@@ -13,18 +13,46 @@ body {
 }
 
 .cityRectWide {
-    background: rgb(255,82,0);
-    width: 800px;
+    background: rgb(255, 82, 0);
+    width: 600px;
     height: 120px;
     border-radius: 20px;
-    margin: -80% 70%;
+    margin: -1150px 70%;
+    position: relative;
 }
 
-h1 {
-    position: fixed;
+.cityName {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* h1 {
+    width: 200px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    font-size: 28px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    bottom: -20px;
+    left: 30px;
     font-family: Arial, Helvetica, sans-serif;
 
-}
+} */
 
 .cityCircleReturn {
     background: rgb(255,82,0);
@@ -36,12 +64,12 @@ h1 {
 }
 
 .cityCircle {
-    background: rgb(0,173,56);
+    background: rgb(0, 173, 56);
     width: 700px;
     height: 700px;
     border-radius: 50%;
     display: grid;
-    margin: 0px;
+    margin: 920px auto;
 }
 
 p {
