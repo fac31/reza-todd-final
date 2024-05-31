@@ -112,6 +112,7 @@ function processPhotos(searchImgs) {
     url: img.urls.regular,
     user: img.user.name,
     userName: img.user.username,
+    alt: img.alt_description,
   }));
 }
 
@@ -144,17 +145,23 @@ function renderResults(locationData, weatherData, photos) {
   let photoHTML = "";
   photos.forEach((photo) => {
     photoHTML += `
-      <div class="photo">
-      <img class="img" src=${photo.url} />
-      <a
-        class="credit"
-        target="_blank"
-        href={https://unsplash.com/@${photo.userName}}
-      >
-        <span>${photo.user}</span>
-      </a>
-      </div>
+      <sl-carousel-item>
+        <img src=${photo.url} alt="${photo.alt}" />
+      </sl-carousel-item>
+    
     `;
+    // photoHTML += `
+    //   <div class="photo">
+    //   <img class="img" src=${photo.url} />
+    //   <a
+    //     class="credit"
+    //     target="_blank"
+    //     href={https://unsplash.com/@${photo.userName}}
+    //   >
+    //     <span>${photo.user}</span>
+    //   </a>
+    //   </div>
+    // `;
   });
 
   document.getElementById("result").innerHTML = `
@@ -171,6 +178,6 @@ function renderResults(locationData, weatherData, photos) {
     <h2>Sunset: ${sunset}</h2>
     <h2>Forecasts:</h2>
     <div class="forecast-container">${forecastHTML}</div>
-    div class="photo-container">${photoHTML}</div>
+    <div class="photo-container"><sl-carousel autoplay loop pagination>${photoHTML}</sl-carousel></div>
   `;
 }
