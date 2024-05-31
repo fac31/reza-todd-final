@@ -13,21 +13,25 @@ window.onload = function(){
 
 
 // JavaScript for carousel functionality
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const slides = document.querySelector('.slides');
-const slideWidth = slides.querySelector('img').clientWidth;
+document.addEventListener('DOMContentLoaded', () => {
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const slides = document.querySelector('.slides');
+  let currentIndex = 0;
+  const images = slides.querySelectorAll('img');
+  const totalImages = images.length;
 
-prevButton.addEventListener('click', () => {
-  slides.scrollBy({
-    left: -slideWidth,
-    behavior: 'smooth'
+  function updateCarousel() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+    updateCarousel();
   });
-});
 
-nextButton.addEventListener('click', () => {
-  slides.scrollBy({
-    left: slideWidth,
-    behavior: 'smooth'
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
   });
 });
