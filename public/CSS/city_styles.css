@@ -174,13 +174,37 @@ span {
     z-index: 1; /* Ensure buttons are above images */
 }
 
-  .next {
+.next {
     right: 20px;
-  }
-  
-  .prev {
+}
+
+.prev {
     left: 20px;
-  }
+}
+
+.back {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    left: 15px;
+    top: 7px
+}
+
+.forward {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    position: absolute;
+    left: 15px;
+    top: 7px
+}
 
 
 
