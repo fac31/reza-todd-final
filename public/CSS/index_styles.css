@@ -24,32 +24,34 @@ body {
     position: relative;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-}
-
+  }
+  
 h1 {
-    display: none; /* Hide the original h1 text */
+    height: 650px;
+    width: 650px;
+    position: relative;
+    animation: effect 15s linear infinite;
 }
-
-.indexWelcomeCircle span {
+  
+  @keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  span {
     position: absolute;
-    transform-origin: 0 325px; /* Center of the circle minus radius */
+    left: 50%;
+    transform-origin: 0px 325px;
+    transform-style: flat;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem; /* Adjust the size as needed */
-    text-align: center;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.indexWelcomeCircle {
-    animation: rotate 10s linear infinite; /* Rotate the entire circle continuously */
-}
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: .01em; /* Adjust the letter spacing */
+  }
 
 
 
@@ -227,17 +229,6 @@ h4 {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-span {
-    position: absolute;
-    left: 50%;
-    transform-origin: 0px 150px;
-    transform-style: flat;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: rgb(30,30,30);
 }
 
 
