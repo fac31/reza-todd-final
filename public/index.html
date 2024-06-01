@@ -20,17 +20,18 @@
     </section>
 
     <section class="indexRectangle">
-      <form class="indexForm" id="indexForm">
-        RADAR:
+      <form class="indexForm" action="/search" id="destination" method="get">
+        <label for="search">RADAR:</label>
         <input
           required
           type="text"
-          id="input"
+          id="search"
           class="input"
+          name="search"
           placeholder="Type here..."
         />
         <section class="indexSquare">
-          <button id="indexSubmit" class="indexSubmit">&#8626;</button>
+          <button type="submit" id="indexSubmit" class="indexSubmit">&#8626;</button>
         </section>
       </form>
     </section>
@@ -73,5 +74,6 @@
     </div>
 
     <script src="./JS/landing.js"></script>
+    <script src="./JS/index.js"></script>
   </body>
 </html>
