@@ -24,24 +24,24 @@ body {
     position: relative;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-  }
-  
+}
+
 h1 {
     height: 650px;
     width: 650px;
     position: relative;
-    animation: effect 15s linear infinite;
+    animation: effect 12s linear infinite;
 }
-  
-  @keyframes effect {
+
+@keyframes effect {
     0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
     }
-  }
-  span {
+}
+span {
     position: absolute;
     left: 50%;
     transform-origin: 0px 325px;
@@ -49,9 +49,9 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: 900;
-    color: #000000;
+    color: rgb(30,30,30);
     letter-spacing: .01em; /* Adjust the letter spacing */
-  }
+}
 
 
 
