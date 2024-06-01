@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City Information - <%= locationData.city %> (<%= locationData.country %>)</title>
+  <link rel="stylesheet" href="../public/CSS/city_styles.css"> </head>
+<body>
+  <section class="cityTriangle">
+    </section>
+
+  <section class="cityRectWide">
+    <h2>City:</h2>
+    <p><%= locationData.city %>, <%= locationData.country %></p>
+  </section>
+
+  <section class="cityCircle">
+    <h2>Weather:</h2>
+    <p id="weatherText"><%= formattedWeatherData.temperature %> (<%= formattedWeatherData.description %>) </p>
+  </section>
+
+  <section class="cityTimeCircle">
+    <h2>Time:</h2>
+    <p id="currentTime">...</p> </section>
+
+  <section class="cityRectTall">
+    <h2>Currency:</h2>
+    <p id="currency">...</p> <h2>About:</h2>
+    <p><%= locationData.formattedDescription %></p>
+  </section>
+
+  <section class="cityCircleReturn">
+    <button id="cityReturn" class="cityReturn"><i class="return"></i></button>
+  </section>
+
+  <section class="cityRectCarousel">
+    <h3>Images:</h3>
+    <ul class="carousel-container">
+      <% imageData.forEach(image => { %>
+        <li class="carousel-item">
+          <img src="<%= image.url %>" alt="<%= image.user %>">
+        </li>
+      <% }) %>
+    </ul>
+    </section>
+
+  <script src="../public/JS/city.js"></script>  </body>
+</html>
