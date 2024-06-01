@@ -131,25 +131,25 @@ span {
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
     position: relative; /* Ensure the buttons position correctly */
     overflow: hidden; /* Hide overflow */
-  }
-  
+}
+
   /* Carousel container */
-  .carousel {
+.carousel {
     display: flex;
     align-items: center;
     overflow: hidden;
     position: relative;
     height: 100%;
-  }
-  
+}
+
   /* Slides container */
-  .slides {
+.slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
     scroll-behavior: smooth;
     width: 100%;
-  }
-  
+}
+
   /* Individual slides (images) */
 .slides img {
     flex: 0 0 90%; /* Each image takes full width of the container */
