@@ -48,8 +48,6 @@ app.get("/destination/:searchTerm", logger, async (req, res) => {
     const imageData = extractImageData(searchImgs);
 
     const cityData = { locationData, formattedWeatherData, imageData };
-    // const encodedCityData = encodeURIComponent(JSON.stringify(cityData));
-    // console.log("dataprepared for redirect", cityData);
     req.session.cityData = cityData;
     res.redirect(`/city/${placeId}`);
   } catch (error) {
@@ -68,7 +66,7 @@ app.get("/city/:placeId", logger, (req, res) => {
     const { locationData, formattedWeatherData, imageData } = cityData;
    
 
-    res.render("city", { placeId,locationData, formattedWeatherData, imageData });
+    res.render("pages/city", { placeId,locationData, formattedWeatherData, imageData });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
