@@ -24,7 +24,6 @@ function extractLocationData(geoData) {
 
 // formatWeatherData(weatherData)
 function formatWeatherData(weatherData) {
-
   const { list, city } = weatherData;
   const cityName = city.name;
   const timezone = city.timezone;
@@ -46,7 +45,6 @@ function formatWeatherData(weatherData) {
       icon,
     };
   });
-
   return { cityName, timezone, sunrise, sunset, forecasts };
 }
 
@@ -64,13 +62,9 @@ function extractImageData(searchImgs) {
       alt,
     };
   });
-  console.log({ check: images });
+
   return images;
 }
-// console.log(extractLocationData);
-// console.log(formatWeatherData);
-// console.log(extractImageData);
-
 module.exports = {
   extractLocationData,
   formatWeatherData,

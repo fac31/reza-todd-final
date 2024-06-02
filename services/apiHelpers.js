@@ -1,11 +1,8 @@
 const axios = require("axios");
-// const { createApi } = require("unsplash-js");
 require("dotenv").config();
 
 const GEOAPIFY_API_KEY = process.env.GEOAPIFY_API_KEY;
-// console.log(GEOAPIFY_API_KEY);
 const WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY;
-// console.log(WEATHER_API_KEY);
 
 const fetchGeoapifyData = async (searchTerm) => {
   const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(searchTerm)}&apiKey=${GEOAPIFY_API_KEY}`;
@@ -30,7 +27,6 @@ const fetchWeatherData = async (lat, lon) => {
 const fetchUnsplashPhotos = async (searchTerm) => {
   const baseUrl = "https://api.unsplash.com/search/photos";
   const UNSPLASH_ACC_KEY = process.env.UNSPLASH_ACC_KEY;
-  // console.log(UNSPLASH_ACC_KEY);
   if (!UNSPLASH_ACC_KEY) {
     throw new Error("Missing Unsplash API key");
   }
@@ -55,10 +51,7 @@ const fetchUnsplashPhotos = async (searchTerm) => {
       console.log("No results found for search term:", searchTerm);
       return [];
     }
-    console.log("Successfully retrieved Unsplash photos");
     const data = response.data.results;
-    // Use the results (stored in response.data.results)
-    console.log({fetcheddata: data});
     return data;
   } catch (error) {
     console.error("Error fetching Unsplash photos:", error.message);

@@ -1,5 +1,4 @@
-const express = require("express");
-const connect = require("connect");
+// const express = require("express");
 const session = require("express-session");
 
 const sessionMiddleware = session({
