@@ -1,10 +1,8 @@
 const express = require("express");
-const connect = require('connect');
-
-
+const connect = require("connect");
 const session = require("express-session");
 
-const sessionMiddleware = express.session({
+const sessionMiddleware = session({
   secret: "r4D4R",
   resave: false,
   saveUninitialized: true,

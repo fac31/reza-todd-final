@@ -22,45 +22,9 @@ function extractLocationData(geoData) {
   };
 }
 
-
 // formatWeatherData(weatherData)
 function formatWeatherData(weatherData) {
-  //   const { list, city } = weatherData;
-  //   const cityName = city.name;
-  //   const timezone = city.timezone;
-  //   const sunrise = city.sunrise;
-  //   const sunset = city.sunset;
 
-  //   const forecasts = list.map((item) => {
-  //     const {
-  //       dt,
-  //       main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
-  //       weather: [{ main: weatherDescription, icon }],
-  //       clouds: { all },
-  //       pop,
-  //       rain,
-  //       wind: { speed, deg },
-  //     } = item;
-
-  //     return {
-  //       dateTime: dt,
-  //       temperature: temp,
-  //       feelsLike: feels_like,
-  //       tempMin: temp_min,
-  //       tempMax: temp_max,
-  //       pressure,
-  //       humidity,
-  //       weather: weatherDescription,
-  //       weatherIcon: icon,
-  //       cloudCover: all,
-  //       chanceOfRain: pop,
-  //       rainAmount: rain,
-  //       windSpeed: speed,
-  //       windDirection: deg,
-  //     };
-  //   });
-
-  //   return { cityName, timezone, sunrise, sunset, forecasts };
   const { list, city } = weatherData;
   const cityName = city.name;
   const timezone = city.timezone;
@@ -88,23 +52,24 @@ function formatWeatherData(weatherData) {
 
 // extractImageData(searchImgs)
 function extractImageData(searchImgs) {
-  const { results } = searchImgs;
-  const images = results.map((image) => {
-    const { urls, alt_description: altDescription, user, userName } = image;
+  const images = searchImgs.map((img) => {
+    // Process each image object here
+    const { urls, alt_description: alt } = img;
+    const { name: user, username: userName } = img.user;
 
     return {
-      src: urls.regular,
-      alt: altDescription,
-      user: user,
-      userName: userName,
+      url: urls.regular,
+      user,
+      userName,
+      alt,
     };
   });
-
+  console.log({ check: images });
   return images;
 }
-console.log(extractLocationData);
-console.log(formatWeatherData);
-console.log(extractImageData);
+// console.log(extractLocationData);
+// console.log(formatWeatherData);
+// console.log(extractImageData);
 
 module.exports = {
   extractLocationData,
