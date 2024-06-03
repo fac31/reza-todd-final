@@ -1,8 +1,271 @@
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: rgb(30,30,30);
     background: rgb(250,247,204);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+/* city name object */
+.cityRectWide {
+    background: rgb(255, 82, 0);
+    width: 600px;
+    height: 120px;
+    border-radius: 20px;
+    margin: -1150px 70%;
+    position: relative;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
+}
+h1 {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 5px;
+}
+
+
+
+/* Return object  */
+.cityCircleReturn {
+    background: rgb(255,82,0);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    margin: -79% 8%;
+    position: relative;
+    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.80);
+}
+.cityReturn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 60px;
+    position: absolute;
+    left: 0;
+    top: -4px;
+    outline: none;
+    border: 0px;
+}
+.return {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    left: 35px;
+}
+
+
+
+/* Weather object */
+.cityCircle {
+    background: rgb(0, 173, 56);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: 990px 30%;
+    box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.5);
+}
+p {
+    height: 650px;
+    width: 650px;
+    position: relative;
+    animation: effect 15s linear infinite;
+}
+@keyframes effect {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+span {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0px 325px;
+    transform-style: flat;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: rgb(30,30,30);
+    font-size: 1rem;
+}
+
+
+
+/* Image carousel container */
+.cityRectCarousel {
+    background: rgb(35,58,108);
+    width: 530px;
+    height: 370px;
+    border-radius: 20px;
+    margin: 1300px 8%; /* Centering the carousel */
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+  /* Carousel container */
+.carousel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+  /* Slides container */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+  /* Individual slides (images) */
+.slides img {
+    flex: 0 0 90%;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: rgb(255, 82, 0);
+    color: #ededed;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1; 
+}
+.next {
+    right: 20px;
+}
+.prev {
+    left: 20px;
+}
+.back {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    left: 15px;
+    top: 7px
+}
+.forward {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    position: absolute;
+    left: 15px;
+    top: 7px
+}
+
+
+
+/* Currency and About object */
+.cityRectTall {
+    background: rgb(255, 165, 30);
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 500px 1050px;
+    position: relative;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.7);
+}
+h3 {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 0 auto;
+    font-size: 30px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 20px;
+}
+h4 {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 0 auto;
+    font-size: 30px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 20px;
+    top: 100px;
+}
+
+
+
+/* Time object */
+.cityTimeCircle {
+    background: rgb(35, 58, 108);
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    margin: -1130px 53%;
+    position: relative;
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.8);
+}
+h2 {
+    width: 450px;
+    height: 75px;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    margin: 100px auto;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    outline: none;
+    border: 0px;
+    left: 90px;
+    top: 10px;
+    align-items:center;
+}
+
+
+
+/* Background image */
 .cityTriangle {
     width: 0;
     height: 0;
@@ -10,106 +273,4 @@ body {
     border-right: 1050px solid transparent;
     border-bottom: 500px solid rgb(255,165,30);
     margin: 350px -600px;
-}
-
-.cityRectWide {
-    background: rgb(255,82,0);
-    width: 800px;
-    height: 120px;
-    border-radius: 20px;
-    margin: -80% 70%;
-}
-
-h1 {
-    position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.cityCircleReturn {
-    background: rgb(255,82,0);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: grid;
-    margin: 0 auto;
-}
-
-.cityCircle {
-    background: rgb(0,173,56);
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
-    display: grid;
-    margin: 0px;
-}
-
-p {
-    height: 300px;
-    width: 300px;
-    position: relative;
-    animation: effect 8s linear infinite;
-}
-
-@keyframes effect {
-    0% {
-    transform: rotate(0deg);
-    }
-    100% {
-    transform: rotate(360deg);
-    }
-}
-
-span {
-    position: absolute;
-    left: 50%;
-    transform-origin: 0px 150px;
-    transform-style: flat;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: #fff;
-}/*# sourceMappingURL=index.css.map */
-
-.cityRectCarousel {
-    background: rgb(35,58,108);
-    width: 650px;
-    height: 450px;
-    border-radius: 20px;
-    margin: 0;
-}
-
-.cityRectTall {
-    background: rgb(255,165,30);
-    width: 400px;
-    height: 750px;
-    border-radius: 20px;
-    margin: -80% 1100px;
-}
-
-.cityHexagon {
-    height: 200px;
-    width: 120px;
-    background: rgb(0,173,56);
-    position:relative;
-    left:50px;
-    box-sizing: border-box;
-}
-.cityHexagon::before, .cityHexagon::after {
-  content:"";
-  position: absolute;
-  height: 0;
-  width: 0; 
-  top:0;
-  /* half height */
-  border-top: 100px solid transparent;
-  border-bottom: 100px solid transparent; 
-}
-.cityHexagon::before {
-  left:-50px;
-  border-right:50px solid rgb(0,173,56); 
-}
-.cityHexagon::after {
-  right:-50px;
-  border-left:50px solid rgb(0,173,56); 
 }

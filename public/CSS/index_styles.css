@@ -11,6 +11,8 @@ body {
     background: rgb(250,247,204);
 }
 
+
+/* Rotating circle */
 .indexWelcomeCircle {
     background: rgb(255, 82, 0);
     width: 650px;
@@ -25,35 +27,35 @@ body {
 }
 
 h1 {
-    display: none; /* Hide the original h1 text */
+    height: 650px;
+    width: 650px;
+    position: relative;
+    animation: effect 12s linear infinite;
 }
 
-.indexWelcomeCircle span {
+@keyframes effect {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+span {
     position: absolute;
-    transform-origin: 0 325px; /* Center of the circle minus radius */
+    left: 50%;
+    transform-origin: 0px 325px;
+    transform-style: flat;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem; /* Adjust the size as needed */
-    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: rgb(30,30,30);
+    letter-spacing: .01em; /* Adjust the letter spacing */
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-.indexWelcomeCircle {
-    animation: rotate 10s linear infinite; /* Rotate the entire circle continuously */
-}
 
-h4 {
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
+/* R.T. productions circle */
 .indexCircleTwo {
     background: rgb(255,165,30);
     width: 180px;
@@ -68,6 +70,13 @@ h4 {
     place-items: center;
     transform: translate(-50%, -50%);
 }
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
 
 /* input object */
 .indexRectangle {
@@ -176,6 +185,8 @@ h4 {
     transform: rotate(90deg);
 }
 
+
+
 /* Styling for Help button */
 .indexHelpPopup {
     display: none;
@@ -218,17 +229,6 @@ h4 {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-span {
-    position: absolute;
-    left: 50%;
-    transform-origin: 0px 150px;
-    transform-style: flat;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: rgb(30,30,30);
 }
 
 
