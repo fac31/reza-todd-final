@@ -1,297 +1,285 @@
-html, body {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    color: rgb(30,30,30);
-    background: rgb(250,247,204);
+  color: rgb(30, 30, 30);
+  background: rgb(250, 247, 204);
 }
-
 
 /* Rotating circle */
 .indexWelcomeCircle {
-    background: rgb(255, 82, 0);
-    width: 650px;
-    height: 650px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
+  background: rgb(255, 82, 0);
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 h1 {
-    height: 650px;
-    width: 650px;
-    position: relative;
-    animation: effect 12s linear infinite;
+  height: 650px;
+  width: 650px;
+  position: relative;
+  animation: effect 12s linear infinite;
 }
 
 @keyframes effect {
-    0% {
+  0% {
     transform: rotate(0deg);
-    }
-    100% {
+  }
+  100% {
     transform: rotate(360deg);
-    }
+  }
 }
 span {
-    position: absolute;
-    left: 50%;
-    transform-origin: 0px 325px;
-    transform-style: flat;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: rgb(30,30,30);
-    letter-spacing: .01em; /* Adjust the letter spacing */
+  position: absolute;
+  left: 50%;
+  transform-origin: 0px 325px;
+  transform-style: flat;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgb(30, 30, 30);
+  letter-spacing: 0.01em; /* Adjust the letter spacing */
 }
-
-
 
 /* R.T. productions circle */
 .indexCircleTwo {
-    background: rgb(255,165,30);
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    display: grid;
-    margin: 80px 240px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.3);
-    top: 50%;  /* Adjust as needed */
-    left: 50%;  /* Adjust as needed */
-    position: absolute;
-    place-items: center;
-    transform: translate(-50%, -50%);
+  background: rgb(255, 165, 30);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: grid;
+  margin: 80px 240px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.3);
+  top: 50%; /* Adjust as needed */
+  left: 50%; /* Adjust as needed */
+  position: absolute;
+  place-items: center;
+  transform: translate(-50%, -50%);
 }
 
 h4 {
-    font-family: Arial, Helvetica, sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-
 
 /* input object */
 .indexRectangle {
-    background: rgb(255,165,30);
-    width: 650px;
-    height: 75px;
-    border-radius: 20px;
-    margin: -340px auto 80px;
-    position: relative;
-    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.3);
+  background: rgb(255, 165, 30);
+  width: 650px;
+  height: 75px;
+  border-radius: 20px;
+  margin: -340px auto 80px;
+  position: relative;
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.3);
 }
 
 .indexForm {
-    width: 200px;
-    height: 75px;
-    border-radius: 20px;
-    background: transparent;
-    position: absolute;
-    font-size: 28px;
-    color: rgb(30,30,30);
-    outline: none;
-    border: 0px;
-    bottom: -20px;
-    left: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  height: 75px;
+  border-radius: 20px;
+  background: transparent;
+  position: absolute;
+  font-size: 28px;
+  color: rgb(30, 30, 30);
+  outline: none;
+  border: 0px;
+  bottom: -20px;
+  left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input {
-    width: 450px;
-    height: 75px;
-    border-radius: 20px;
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 28px;
-    color: rgb(30,30,30);
-    outline: none;
-    border: 0px;
-    left: 130px;
-    top: -23px;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 450px;
+  height: 75px;
+  border-radius: 20px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  color: rgb(30, 30, 30);
+  outline: none;
+  border: 0px;
+  left: 130px;
+  top: -23px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input::placeholder {
-    color: rgba(0,0,0,.4)
+  color: rgba(0, 0, 0, 0.4);
 }
-
 
 /* submit object */
 .indexSquare {
-    background: rgb(0,173,56);
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
-    margin: 60% 270px;
-    align-items: center;
-    position: relative;
-    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
+  background: rgb(0, 173, 56);
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  margin: 60% 270px;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
 }
 
 .indexSubmit {
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 37px;
-    outline: none;
-    border: 0px;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 37px;
+  outline: none;
+  border: 0px;
 }
-
-
 
 /* Rectangle Help object */
 .indexRectangleFive {
-    background: rgb(255,82,0);
-    width: 220px;
-    height: 500px;
-    border-radius: 20px;
-    margin: 20% 700px;
-    right: -34%;
-    position: absolute;
-    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
+  background: rgb(255, 82, 0);
+  width: 220px;
+  height: 500px;
+  border-radius: 20px;
+  margin: 20% 700px;
+  right: -34%;
+  position: absolute;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
 }
 
 .help {
-    position: absolute; /* Position the button relative to its container */
-    top: 50%; /* Position it vertically in the middle */
-    left: 50%; /* Position it horizontally in the middle */
-    transform: translate(-50%, -50%); /* Center it precisely */
+  position: absolute; /* Position the button relative to its container */
+  top: 50%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center it precisely */
 }
 
 #indexShowHelp {
-    background-color: transparent; /* Background color */
-    border: 0px;
-    border-radius: 10px; /* Border radius */
-    width: 500px;
-    height: 220px;
-    padding: 10px 20px; /* Padding */
-    font-size: 42px; /* Font size */
-    font-family:Arial, Helvetica, sans-serif;
-    cursor: pointer; /* Cursor style */
-    transform: rotate(90deg);
+  background-color: transparent; /* Background color */
+  border: 0px;
+  border-radius: 10px; /* Border radius */
+  width: 500px;
+  height: 220px;
+  padding: 10px 20px; /* Padding */
+  font-size: 42px; /* Font size */
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer; /* Cursor style */
+  transform: rotate(90deg);
 }
-
-
 
 /* Styling for Help button */
 .indexHelpPopup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .indexPopupContent {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 650px;
-    border-radius: 20px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 650px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .indexPopupContent p:first-of-type,
 .indexPopupContent p:last-of-type {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .indexPopupClose {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    left: 28%;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  left: 28%;
 }
 .indexPopupClose:hover,
 .indexPopupClose:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
-
-
 
 /* Miscallaneous shapes */
 .indexCircle {
-    background: rgb(35,58,108);
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    display: grid;
-    margin: -850px 70%;
-    box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.6);
+  background: rgb(35, 58, 108);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: grid;
+  margin: -850px 70%;
+  box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.6);
 }
 
 .indexCircleThree {
-    background: rgb(35,58,108);
-    width: 290px;
-    height: 290px;
-    border-radius: 50%;
-    display: grid;
-    margin: 10px -400px;
-    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
-    top: 50%;  /* Adjust as needed */
-    left: 50%;  /* Adjust as needed */
-    position: absolute;
+  background: rgb(35, 58, 108);
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  display: grid;
+  margin: 10px -400px;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
+  top: 50%; /* Adjust as needed */
+  left: 50%; /* Adjust as needed */
+  position: absolute;
 }
 
 .indexRectangleTwo {
-    background: rgb(0,173,56);
-    width: 80px;
-    height: 300px;
-    border-radius: 20px;
-    margin: 80px 100px;
-    position: absolute;
-    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
+  background: rgb(0, 173, 56);
+  width: 80px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 80px 100px;
+  position: absolute;
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
 }
 
 .indexRectangleThree {
-    background: rgb(255,82,0);
-    width: 320px;
-    height: 200px;
-    border-radius: 20px;
-    margin: 190px 520px;
-    position: absolute;
-    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
+  background: rgb(255, 82, 0);
+  width: 320px;
+  height: 200px;
+  border-radius: 20px;
+  margin: 190px 520px;
+  position: absolute;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.6);
 }
 
 .indexRectangleFour {
-    background: rgb(255,165,30);
-    width: 80px;
-    height: 300px;
-    border-radius: 20px;
-    margin: -120px 40%;
-    position: absolute;
-    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.2);
+  background: rgb(255, 165, 30);
+  width: 80px;
+  height: 300px;
+  border-radius: 20px;
+  margin: -120px 40%;
+  position: absolute;
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.2);
 }
 
 .indexTriangle {
-    width: 0;
-    height: 0;
-    border-left: 200px solid transparent;
-    border-right: 3500px solid transparent;
-    border-bottom: 1100px solid rgb(0,173,56);
-    margin: -700px 77%;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 3500px solid transparent;
+  border-bottom: 1100px solid rgb(0, 173, 56);
+  margin: -700px 77%;
 }
