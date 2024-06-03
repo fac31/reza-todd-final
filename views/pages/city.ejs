@@ -1,47 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>City Information - <%= locationData.city %> (<%= locationData.country %>)</title>
-  <link rel="stylesheet" href="../public/CSS/city_styles.css"> </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/city_styles.css" />
+    <title>api project</title>
+  </head>
 <body>
-  <section class="cityTriangle">
+  <header>
+    <!-- we will put the back button as partial  -->
+     <!-- <section class="cityCircleReturn">
+      <button id="cityReturn" class="cityReturn"><i class="return"></i></button>
+    </section> -->
+
+  </header>
+  <main>
+    <section class="cityTriangle">
     </section>
 
-  <section class="cityRectWide">
-    <h2>City:</h2>
-    <p><%= locationData.city %>, <%= locationData.country %></p>
-  </section>
+    <section class="cityRectWide">
+      <h2>City:</h2>
+      <p><%= locationData.city %>, <%= locationData.country %></p>
+      <p><%= locationData.formatted %></p>
+    </section>
 
-  <section class="cityCircle">
-    <h2>Weather:</h2>
-    <p id="weatherText"><%= formattedWeatherData.temperature %> (<%= formattedWeatherData.description %>) </p>
-  </section>
-
-  <section class="cityTimeCircle">
-    <h2>Time:</h2>
-    <p id="currentTime">...</p> </section>
-
-  <section class="cityRectTall">
-    <h2>Currency:</h2>
-    <p id="currency">...</p> <h2>About:</h2>
-    <p><%= locationData.formattedDescription %></p>
-  </section>
-
-  <section class="cityCircleReturn">
-    <button id="cityReturn" class="cityReturn"><i class="return"></i></button>
-  </section>
-
-  <section class="cityRectCarousel">
-    <h3>Images:</h3>
-    <ul class="carousel-container">
-      <% imageData.forEach(image => { %>
-        <li class="carousel-item">
-          <img src="<%= image.url %>" alt="<%= image.user %>">
-        </li>
+    <section class="cityCircle">
+      <h2>Weather:</h2>
+      <% formattedWeatherData.forecasts.forEach(forecast => { %>
+        <p>Date: <%= forecast.date %></p>
+        <p>Temperature: <%= forecast.temp %></p>
+        <p>Min Temperature: <%= forecast.minTemp %> kelvin</p>
+        <p>Max Temperature: <%= forecast.maxTemp %></p>
+        <p>Humidity: <%= forecast.humidity %></p>
+        <p>Description: <%= forecast.description %></p>
+        <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="<%= forecast.description %>">
       <% }) %>
-    </ul>
+     
     </section>
 
-  <script src="../public/JS/city.js"></script>  </body>
+    <section class="cityTimeCircle">
+      <h2>Time:</h2>
+      <p id="currentTime">...</p> </section>
+
+      <section class="cityTimeCircle">
+        <h2>Time:</h2>
+        <p id="currentTime">...</p>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><defs><linearGradient id="a" x1="150" x2="234" y1="119.2" y2="264.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fbbf24"/><stop offset=".5" stop-color="#fbbf24"/><stop offset="1" stop-color="#f59e0b"/></linearGradient><clipPath id="b"><path fill="none" d="M512 306H304l-35.9-31.4a18.4 18.4 0 00-24.2 0L208 306H0V0h512Z"/></clipPath><symbol id="c" viewBox="0 0 384 384"><circle cx="192" cy="192" r="84" fill="url(#a)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="6"/><path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.7V12m0 360v-49.7m92.2-222.5 35-35M64.8 319.2l35.1-35.1m0-184.4-35-35m254.5 254.5-35.1-35.1M61.7 192H12m360 0h-49.7"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="0 192 192; 45 192 192"/></path></symbol></defs><g clip-path="url(#b)"><use xlink:href="#c" width="384" height="384" transform="translate(64 100)"/></g><path fill="none" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="18" d="M128 332h88l40-36 40 36h88"/></svg>
+        <p>Sunrise: <%= new Date((formattedWeatherData.sunrise + formattedWeatherData.timezone) * 1000).toLocaleTimeString() %></p>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><defs><linearGradient id="a" x1="150" x2="234" y1="119.2" y2="264.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fbbf24"/><stop offset=".5" stop-color="#fbbf24"/><stop offset="1" stop-color="#f59e0b"/></linearGradient><clipPath id="b"><path fill="none" d="M512 306H296a21.5 21.5 0 00-14 5.3L256 334l-26-22.7a21.5 21.5 0 00-14-5.3H0V0h512Z"/></clipPath><symbol id="c" viewBox="0 0 384 384"><circle cx="192" cy="192" r="84" fill="url(#a)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="6"/><path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.7V12m0 360v-49.7m92.2-222.5 35-35M64.8 319.2l35.1-35.1m0-184.4-35-35m254.5 254.5-35.1-35.1M61.7 192H12m360 0h-49.7"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="0 192 192; 45 192 192"/></path></symbol></defs><g clip-path="url(#b)"><use xlink:href="#c" width="384" height="384" transform="translate(64 100)"/></g><path fill="none" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="18" d="M128 332h88l40 36 40-36h88"/></svg>
+        <p>Sunset: <%= new Date((formattedWeatherData.sunset + formattedWeatherData.timezone) * 1000).toLocaleTimeString() %></p>
+      </section>
+
+    <section class="cityRectTall">
+      <h2>Currency:</h2>
+    </section>
+   
+    <section class="cityRectCarousel">
+      <% imageData.forEach(image => { %>
+        <div class="carousel-item">
+          <img src="<%= image.url %>" alt="<%= image.alt %>">
+          <div class="visually-hidden">
+            <p>User: <%= image.user %></p>
+            <p>Username: <%= image.userName %></p>
+          </div>
+        </div>
+      <% }) %>
+    </section>
+
+  </main>
+
+
+  
+</body>
+
 </html>
