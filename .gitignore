@@ -4,3 +4,8 @@ node_modules
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+{
+    "liveServer.settings.port": 5501
+}
+.vscode
