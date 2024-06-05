@@ -1,43 +1,58 @@
 <!doctype html>
 <html lang="en">
 <%- include('../partials/head') %>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace.js"></script>
 
 <body>
   <header>
     <div class="cityCircleReturn">
-      <a id="cityReturn" class="cityReturn" href="index.html"><sl-icon name="arrow-left-short"></sl-icon></a>
+      <a id="cityReturn" class="cityReturn" href="/"><sl-icon name="arrow-left-short"></sl-icon></a>
     </div>
   </header>
   <div class="cityRectWide">
-    <h1><%= locationData.formatted %></h1>
-    <p><%= locationData.city %>, <%= locationData.country %></p>
+    <div class="city-container">
+      <h1><%= locationData.formatted %></h1>
+      <p><%= locationData.city %>, <%= locationData.country %></p>
+    </div>
+   
   </div>
 
 
   <div class="cityCircle">
 
-    <h2>Current Weather:</h2>
-    <p>Temperature: <%= (formattedWeatherData.currentWeatherData.temp - 273.15).toFixed(2) %>°C</p>
-    <p>Feels Like: <%= (formattedWeatherData.currentWeatherData.feelsLike - 273.15).toFixed(2) %></p>
-    <p>Min Temperature: <%= formattedWeatherData.currentWeatherData.tempMin %></p>
-    <p>Max Temperature: <%= formattedWeatherData.currentWeatherData.tempMax %></p>
-    <p>Pressure: <%= formattedWeatherData.currentWeatherData.pressure %></p>
-    <p>Humidity: <%= formattedWeatherData.currentWeatherData.humidity %></p>
-    <p>Wind Speed: <%= formattedWeatherData.currentWeatherData.windSpeed %></p>
-    <p>Wind Degree: <%= formattedWeatherData.currentWeatherData.windDeg %></p>
-    <p>Rain: <%= formattedWeatherData.currentWeatherData.rain %></p>
-    <p>Clouds: <%= formattedWeatherData.currentWeatherData.clouds %></p>
-    <p>Description: <%= formattedWeatherData.currentWeatherData.description %></p>
-    <img src="http://openweathermap.org/img/w/<%= formattedWeatherData.currentWeatherData.icon %>.png" alt="<%= formattedWeatherData.currentWeatherData.description %>">
+    <div class='cwCurrentWeather'>
+      <div class="cwWeatherContainer">
+          <div class="cwHeader">
+              <h1>Current Conditions</h1>
+          </div>
+          <div class="cwMain">
+              <div class="cwTemperature">
+                  <img src="http://openweathermap.org/img/w/<%= formattedWeatherData.currentWeatherData.icon %>.png" alt="<%= formattedWeatherData.currentWeatherData.description %>">
+                  <div class="cwTempValue"><%= (formattedWeatherData.currentWeatherData.temp - 273.15).toFixed(2) %>°C</div>
+                  <div class="cwFeelsLike">Feels Like: <%= (formattedWeatherData.currentWeatherData.feelsLike - 273.15).toFixed(2) %>°C</div>
+              </div>
+              <div class="cwDetails">
+                  <p>Wind Speed: <%= formattedWeatherData.currentWeatherData.windSpeed %> MPH</p>
+                  <p>Wind Degree: <%= formattedWeatherData.currentWeatherData.windDeg %></p>
+                  <p>Pressure: <%= formattedWeatherData.currentWeatherData.pressure %> hPa</p>
+                  <p>Humidity: <%= formattedWeatherData.currentWeatherData.humidity %> %</p>
+                  <p>Visibility: <%= formattedWeatherData.currentWeatherData.visibility %> MI</p>
+              </div>
+          </div>
+          <div class="cwFooter">
+              <div>Rain: <%= formattedWeatherData.currentWeatherData.rain %> mm</div>
+              <div>Clouds: <%= formattedWeatherData.currentWeatherData.clouds %> %</div>
+          </div>
+      </div>
+  </div>
 
-    next 5 days:
+    <h4>next 5 days:</h4>
     <sl-carousel class="vertical" pagination orientation="vertical">
       <% formattedWeatherData.forecasts.forEach(forecast => { %>
         <sl-carousel-item>
           <sl-card class="card-image">
+            <span><%= new Intl.DateTimeFormat('en-US', { weekday: 'short', hour: '2-digit', minute: '2-digit',hour12:false }).format(new Date(forecast.date)) %></span>
+            <span><%= forecast.description %></span>
             <img slot="image" src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="<%= forecast.description %>">
-            <span><sl-format-date weekday="short" hour="numeric" minute="numeric" hour-format="24" ><%= forecast.date %></sl-format-date></span>
             <span><%= (forecast.temp - 273.15).toFixed(2) %>°C</span>
           </sl-card>
         </sl-carousel-item>
@@ -57,9 +72,7 @@
     </sl-card>
   </div>
 
-  <section class="cityRectTall">
-    <h2>Currency:</h2>
-  </section>
+
   <section class="cityRectCarousel">
     <sl-carousel loop navigation pagination>
       <% imageData.forEach(image => { %>
