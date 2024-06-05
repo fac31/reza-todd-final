@@ -13,7 +13,16 @@ const fetchGeoapifyData = async (searchTerm) => {
     throw new Error(`Geoapify API error: ${error.message}`);
   }
 };
+const fetchCurrentWeatherData = async (lat, lon) => {
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`;
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    throw new Error(`OpenWeatherMap API error: ${error.message}`);
+  }
 
+}
 const fetchWeatherData = async (lat, lon) => {
   const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`;
   try {
@@ -61,5 +70,6 @@ const fetchUnsplashPhotos = async (searchTerm) => {
 module.exports = {
   fetchGeoapifyData,
   fetchWeatherData,
+  fetchCurrentWeatherData,
   fetchUnsplashPhotos,
 };
