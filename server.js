@@ -11,6 +11,7 @@ const {
   fetchGeoapifyData,
   fetchWeatherData,
   fetchUnsplashPhotos,
+  fetchCurrentWeatherData
 } = require("./services/apiHelpers");
 
 const {
@@ -43,8 +44,9 @@ app.get("/destination/:searchTerm", logger, async (req, res) => {
     const locationData = extractLocationData(geoData);
     const {lat,lon,placeId} = locationData;
     const weatherData = await fetchWeatherData(lat, lon);
+    const currentWeatherData = await fetchCurrentWeatherData(lat, lon);
     const searchImgs = await fetchUnsplashPhotos(searchTerm);
-    const formattedWeatherData = formatWeatherData(weatherData);
+    const formattedWeatherData = formatWeatherData(weatherData,currentWeatherData);
     const imageData = extractImageData(searchImgs);
 
     const cityData = { locationData, formattedWeatherData, imageData };

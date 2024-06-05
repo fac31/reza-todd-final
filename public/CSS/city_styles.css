@@ -27,12 +27,29 @@ body {
     / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 8px 20px;
 }
-/* back button */
-/*  {
-  
-  
- 
-} */
+/* forecast carousel begin */
+.card-image {
+  max-width: 100px;
+}
+.vertical {
+  max-height: 400px;
+}
+
+.vertical::part(base) {
+  grid-template-areas: 'slides slides pagination';
+}
+
+.vertical::part(pagination) {
+  flex-direction: column;
+}
+
+.vertical::part(navigation) {
+  transform: rotate(90deg);
+  display: flex;
+}
+
+/* forecast  carousel end */
+
 
 .cityReturn {
   grid-area: back;

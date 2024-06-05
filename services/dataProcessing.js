@@ -23,7 +23,7 @@ function extractLocationData(geoData) {
 }
 
 // formatWeatherData(weatherData)
-function formatWeatherData(weatherData) {
+function formatWeatherData(weatherData, currentWeatherData) {
   const { list, city } = weatherData;
   const cityName = city.name;
   const timezone = city.timezone;
@@ -45,7 +45,43 @@ function formatWeatherData(weatherData) {
       icon,
     };
   });
-  return { cityName, timezone, sunrise, sunset, forecasts };
+  const {
+    main: {
+      temp: currentTemp,
+      feels_like: currentFeelsLike,
+      temp_min: currentTempMin,
+      temp_max: currentTempMax,
+      pressure: currentPressure,
+      humidity: currentHumidity,
+    },
+    visibility: currentVisibility,
+    wind: { speed: currentWindSpeed, deg: currentWindDeg },
+    rain: { "1h": currentRain = 0 } = {},
+    clouds: { all: currentClouds },
+    weather: [{ description: currentWeather, icon: currentIcon }],
+  } = currentWeatherData;
+  return {
+    cityName,
+    timezone,
+    sunrise,
+    sunset,
+    forecasts,
+    currentWeatherData: {
+      temp: currentTemp,
+      feelsLike: currentFeelsLike,
+      tempMin: currentTempMin,
+      tempMax: currentTempMax,
+      pressure: currentPressure,
+      humidity: currentHumidity,
+      visibility: currentVisibility,
+      windSpeed: currentWindSpeed,
+      windDeg: currentWindDeg,
+      rain: currentRain,
+      clouds: currentClouds,
+      description: currentWeather,
+      icon: currentIcon,
+    },
+  };
 }
 
 // extractImageData(searchImgs)
