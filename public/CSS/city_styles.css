@@ -1,93 +1,112 @@
-html,
-body {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
 }
-
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /* display: block; */
+}
 body {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 15px;
   color: rgb(30, 30, 30);
   background: rgb(250, 247, 204);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  height: 100vh;
+  display: grid;
+  grid:
+    "back back . . weather weather weather . city city city ." 1fr
+    ". . . . weather weather weather . . . currency currency" 1fr
+    ". carousel carousel carousel . . . . . . currency currency" 1fr
+    ". carousel carousel carousel . . . time time . . ." 1fr
+    / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px 20px;
+}
+/* back button */
+/*  {
+  
+  
+ 
+} */
+
+.cityReturn {
+  grid-area: back;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 82, 0);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+/* carousel */
+.cityRectCarousel {
+  grid-area: carousel;
+  height: 400px;
+  width:600px
+
+}
+
+/* weatehr circle  thing */
+.cityCircle {
+  grid-area: weather;
+}
+/* time circle thing */
+.cityTimeCircle {
+  grid-area: time;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+}
+.card-image {
+  max-width: 200px;
+}
+.card-image > p {
+  font-size: 1.2rem;
+  justify-content: center;
+}
+/* city name thing */
+.cityRectWide {
+  grid-area: city;
+}
+
+/* currency and about ? */
+.cityRectTall {
+  grid-area: currency;
 }
 
 /* city name object */
 .cityRectWide {
   background: rgb(255, 82, 0);
-  width: 600px;
   height: 120px;
   border-radius: 20px;
-  margin: -1150px 70%;
-  position: relative;
+  /* position: relative; */
   box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.4);
-}
-h1 {
-  width: 450px;
-  height: 75px;
-  border-radius: 20px;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 40px;
-  color: rgb(30, 30, 30);
-  outline: none;
-  border: 0px;
-  left: 20px;
-  top: 5px;
-}
-
-/* Return object  */
-.cityCircleReturn {
-  background: rgb(255, 82, 0);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: grid;
-  margin: -79% 8%;
-  position: relative;
-  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.8);
-}
-.cityReturn {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: transparent;
-  font-size: 60px;
-  position: absolute;
-  left: 0;
-  top: -4px;
-  outline: none;
-  border: 0px;
-}
-.return {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  position: absolute;
-  left: 35px;
 }
 
 /* Weather object */
-.cityCircle {
+/* .cityCircle {
   background: rgb(0, 173, 56);
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin: 990px 30%;
   box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.5);
-}
-p {
+  grid-column-start: 3 / 4;
+} */
+/* p {
   height: 650px;
   width: 650px;
   position: relative;
@@ -110,58 +129,9 @@ span {
   font-weight: 900;
   color: rgb(30, 30, 30);
   font-size: 1rem;
-}
+} */
 
-/* Image carousel container */
-.cityRectCarousel {
-  background: rgb(35, 58, 108);
-  width: 530px;
-  height: 370px;
-  border-radius: 20px;
-  margin: 1300px 8%; /* Centering the carousel */
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
-  overflow: hidden;
-}
-/* Carousel container */
-.carousel {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
-/* Slides container */
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  scroll-behavior: smooth;
-  width: 100%;
-}
-/* Individual slides (images) */
-.slides img {
-  flex: 0 0 90%;
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 10px 20px;
-  background-color: rgb(255, 82, 0);
-  color: #ededed;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 1;
-}
-.next {
-  right: 20px;
-}
+/* 
 .prev {
   left: 20px;
 }
@@ -186,19 +156,20 @@ span {
   position: absolute;
   left: 15px;
   top: 7px;
-}
+} */
 
 /* Currency and About object */
-.cityRectTall {
+/* .cityRectTall {
   background: rgb(255, 165, 30);
   width: 350px;
   height: 500px;
   border-radius: 20px;
-  margin: 500px 1050px;
   position: relative;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.7);
-}
-h3 {
+  grid-column-start: 6 / 7;
+
+} */
+/* h3 {
   width: 450px;
   height: 75px;
   border-radius: 20px;
@@ -225,19 +196,20 @@ h4 {
   border: 0px;
   left: 20px;
   top: 100px;
-}
+} */
 
 /* Time object */
-.cityTimeCircle {
+/* .cityTimeCircle {
   background: rgb(35, 58, 108);
   width: 290px;
   height: 290px;
   border-radius: 50%;
-  margin: -1130px 53%;
   position: relative;
   box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.8);
-}
-h2 {
+  grid-column-start: 4 / 5;
+
+} */
+/* h2 {
   width: 450px;
   height: 75px;
   border-radius: 20px;
@@ -251,14 +223,14 @@ h2 {
   left: 90px;
   top: 10px;
   align-items: center;
-}
+} */
 
 /* Background image */
-.cityTriangle {
+/* .cityTriangle {
   width: 0;
   height: 0;
   border-left: 250px solid transparent;
   border-right: 1050px solid transparent;
   border-bottom: 500px solid rgb(255, 165, 30);
   margin: 350px -600px;
-}
+} */
